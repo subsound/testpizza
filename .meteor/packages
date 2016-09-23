@@ -37,3 +37,9 @@ meteorhacks:npm
 
 
 npm-container
+momentjs:moment
+session
+cfs:standard-packages
+cfs:gridfs
+aldeed:simple-schema
+aldeed:collection2

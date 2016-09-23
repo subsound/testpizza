@@ -1,0 +1,96 @@
+<template name="group">
+<div class="container" style="padding-top: 60px">
+    <div class="row">
+      <div class="col-md-7 groupimg">
+        <img src="{{groupImage}}" alt="" />
+      </div>
+      <div class="col-md-5">
+        <h1 class="text-center extra-pad-bott">{{name}}</h1>
+       
+                <!-- <div class="col-sm-6">
+                    <h5>Group participants</h5>
+                    <ul class="participants">
+                        {{#if isCreator}}
+                        {{#each participants}}
+                            <li>
+                                <p class="removeuser">{{#if username}} {{username}} {{else}} {{profile.name}} {{/if}}</p>
+                            </li>
+                        {{/each}}
+                        {{else}}
+                            {{#each participants}}
+                                <li>
+                                    <p>{{#if username}} {{username}} {{else}} {{profile.name}} {{/if}}</p>
+                                </li>
+                            {{/each}}
+                        {{/if}}
+                    </ul>
+                </div> -->
+
+ <div class="col-sm-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Group participants</h3>
+                </div>
+                <ul class="list-group">
+                {{#if isCreator}}
+                        {{#each participants}}
+                    <a href="#" class="list-group-item removeuser">{{#if username}} {{username}} {{else}} {{profile.name}} {{/if}}</a>
+                    {{/each}}
+                        {{else}}
+                            {{#each participants}}
+                            <a href="#" class="list-group-item">{{#if username}} {{username}} {{else}} {{profile.name}} {{/if}}</a>
+                            {{/each}}
+                        {{/if}}
+                </ul>
+            </div>
+        </div>
+
+
+                 <!-- {{#if isCreator}}  
+                <div class="col-sm-6">
+                    <h5>Add participants</h5>
+                    <ul class="participants">
+                        {{#each possibleParticipants}}
+                            <li>
+                                <span class="fa fa-user pull-left"></span>
+                                <span>{{#if username}} {{username}} {{else}} {{profile.name}} {{/if}}</span>
+                                <span class="adduser fa fa-user-plus pull-right" title="add user"></span>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}  -->
+
+{{#if isCreator}} 
+                 <div class="col-sm-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        All User List, you can add someone</h3>
+                </div>
+                <ul class="list-group">
+                {{#each possibleParticipants}}
+                    <a href="#" class="list-group-item adduser">{{#if username}} {{username}} {{else}} {{profile.name}} {{/if}}</a>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        {{/if}} 
+
+      </div>
+    </div>
+   {{#if isCreator}}
+    <div class="row top-buffer">
+        <div class="col-md-10"></div>
+        <div class="col-md-1">add event</div>
+        <div class="col-md-1"><button type="button" class="delete-btn btn btn-warning btn-circle btn-xl"><i class="glyphicon glyphicon-remove"></i></button> </div>
+    </div>
+    {{/if}}
+
+  </div>
+
+
+
+
+</template>

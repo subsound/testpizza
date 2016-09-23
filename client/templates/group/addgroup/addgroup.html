@@ -1,0 +1,64 @@
+<template name="addGroup">
+<div class="container auth">
+    <h1 class="text-center">Create New Group </h1>
+    <div id="big-form" class="well auth-box">
+      <form>
+        <fieldset>
+          <!-- Text input-->
+          <div class="form-group">
+            <label class=" control-label" for="textinput">Group name</label>  
+            <div class="">
+              <input  name="textinput" placeholder="Group name" class="form-control input-md" type="text" id="groupName">
+              <span class="help-block">enter group name here</span>  
+            </div>
+          </div>
+
+           <!-- File Button --> 
+          <div class="form-group">
+            <label class=" control-label" for="filebutton">Avatar</label>
+            <div class="">
+              <input  name="filebutton" class="input-file" type="file" id="groupAvatar">
+            </div>
+          </div>
+
+        
+
+          <div class="form-group">
+            <label class=" control-label" for="selectmultiple">Choose Customer/s</label>
+            <div class="">
+              <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+                
+                {{#each customerShow}}
+                   {{> customerinlist}}
+                {{/each}}
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class=" control-label" for="selectmultiple">Choosen Customer/s</label>
+            <div class="">
+              <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+                
+                {{#each customerinSHow}}
+                   {{> customerinlistremove}}
+                {{/each}}
+              </select>
+            </div>
+          </div>
+
+
+          <!-- Button (Double) -->
+          <div class="form-group">
+            <label class=" control-label" for="button1id">Double the action</label>
+            <div class="">
+              <button id="button1id" name="button1id" class="btn btn-success">Good Button</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  </template>
